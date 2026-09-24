@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>May gusto ka ba sakin? 💜</h1>
+
+        <p>Choose your answer:</p>
+
+        <div class="buttons">
+
+            <!-- YES GOES TO ANOTHER HTML -->
+            <button id="yesBtn" onclick="goToYes()">
+                Yes 💖
+            </button>
+
+            <button id="noBtn">
+                No 😭
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const noBtn = document.getElementById("noBtn");
+
+        let noSize = 1;
+
+        noBtn.addEventListener("click", function() {
+
+            noSize -= 0.15;
+
+            if (noSize > 0.1) {
+
+                noBtn.style.transform =
+                    `scale(${noSize})`;
+
+            } else {
+
+                noBtn.style.transform = "scale(0)";
+
+                noBtn.style.pointerEvents = "none";
+
+            }
+
+        });
+
+
+        function goToYes() {
+
+            window.location.href = "success.html";
+
+        }
+
+    </script>
+
+</body>
+</html>
